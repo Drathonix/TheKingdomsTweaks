@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TheKingdomsTweaks/CakeBuild/CakeBuild.csproj" />
+  <Project Path="TheKingdomsTweaks/TheKingdomsTweaks/TheKingdomsTweaks.csproj" />
+</Solution>
