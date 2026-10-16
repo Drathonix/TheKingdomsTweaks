@@ -1,4 +1,6 @@
-﻿using Vintagestory.API.Client;
+﻿using HarmonyLib;
+using System.Reflection;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
@@ -7,21 +9,31 @@ namespace TheKingdomsTweaks
 {
     public class TheKingdomsTweaksModSystem : ModSystem
     {
+        private const string HarmonyId = "thekingdomstweaks";
+        private Harmony _harmony;
+
         // Called on server and client
         // Useful for registering block/entity classes on both sides
         public override void Start(ICoreAPI api)
         {
-            Mod.Logger.Notification("Hello from template mod: " + api.Side);
+            _harmony = new Harmony(HarmonyId);
+            _harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 
         public override void StartServerSide(ICoreServerAPI api)
         {
-            Mod.Logger.Notification("Hello from template mod server side: " + Lang.Get("thekingdomstweaks:hello"));
+            
         }
 
         public override void StartClientSide(ICoreClientAPI api)
         {
-            Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("thekingdomstweaks:hello"));
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            _harmony?.UnpatchAll(HarmonyId);
         }
     }
 }
