@@ -1,10 +1,16 @@
 [
-
   {
     "code": "claycollector",
     "type": "positive",
     "attributes": {
-      "clayDropRate": 0.05
+      "clayDropRate": 0.25
+    }
+  },
+  {
+    "code": "diamondintherough",
+    "type": "positive",
+    "attributes": {
+      "panningDropRate": 0.25
     }
   }
-}
+]
