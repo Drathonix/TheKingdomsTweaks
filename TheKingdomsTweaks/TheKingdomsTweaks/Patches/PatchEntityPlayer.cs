@@ -26,19 +26,11 @@ public class PatchEntityPlayer
 
             // A trait or attribute that checks for day or night, presence of a roof, and light level, --- ashtoash 
             // and if day, unsheltered, and bright, sets the player on fire until conditions change back.
-            try
+            
+            int level = __instance.World.BlockAccessor.GetLightLevel(__instance.Pos.AsBlockPos, EnumLightLevelType.Sunbrightness);
+            if(level > 19)
             {
-                int level = __instance.World.BlockAccessor.GetLightLevel(__instance.Pos.AsBlockPos, EnumLightLevelType.Sunbrightness);
-                //var weather = __instance.Api.ModLoader.GetModSystem<WeatherSystemServer>();
-                //weather.get
-                if(level > 19)
-                {
-                    __instance.Ignite();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
+                __instance.Ignite();
             }
         }
     }

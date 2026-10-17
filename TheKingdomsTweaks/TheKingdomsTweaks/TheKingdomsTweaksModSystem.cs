@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using System.Reflection;
+using TheKingdomsTweaks.Block;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -18,6 +19,7 @@ namespace TheKingdomsTweaks
         {
             _harmony = new Harmony(HarmonyId);
             _harmony.PatchAll(Assembly.GetExecutingAssembly());
+            api.RegisterBlockClass("TKTClay",typeof(BlockClay));
         }
 
         public override void StartServerSide(ICoreServerAPI api)

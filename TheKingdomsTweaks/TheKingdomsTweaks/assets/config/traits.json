@@ -1,0 +1,10 @@
+[
+
+  {
+    "code": "claycollector",
+    "type": "positive",
+    "attributes": {
+      "clayDropRate": 0.05
+    }
+  }
+}
