@@ -22,7 +22,7 @@ public class PatchBlockPan
 
     }
 
-    private static void SpecCreateDrop(BlockPan pan, EntityAgent byEntity, string fromBlockCode)
+    public static void SpecCreateDrop(BlockPan pan, EntityAgent byEntity, string fromBlockCode)
     {
         targetMethod.Invoke(pan,[byEntity,fromBlockCode]);
         float n = Math.Max(byEntity.Stats.GetBlended("panningDropRate") -1,0);

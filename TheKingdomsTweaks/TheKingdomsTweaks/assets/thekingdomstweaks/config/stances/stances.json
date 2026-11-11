@@ -1,0 +1,12 @@
+[
+  {
+    "Code": "default"
+  },
+  {
+    "Code": "quadruped",
+    "MoveSpeedMult": 1.2,
+    "JumpHeightMult": 1.2
+  }
+]
+
+

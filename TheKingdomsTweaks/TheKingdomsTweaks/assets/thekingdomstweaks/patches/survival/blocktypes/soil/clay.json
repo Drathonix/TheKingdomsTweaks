@@ -1,7 +1,7 @@
 [
   {
     "enabled": true,
-    "file": "game:blocktypes/blocktypes/clay.json",
+    "file": "game:blocktypes/soil/clay.json",
     "op": "addmerge",
     "path": "/class",
     "value": "TKTClay"

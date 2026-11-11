@@ -1,7 +1,11 @@
 {
-  "claycollector": "Clay Collector",
-  "diamondintherough": "Diamond in the Rough",
-  "shapeshifter": "Shapeshifter",
-  "moonsick": "Moon Sick",
-  "ashtoash": "Ashes to Ashes"
+  "trait-claycollector": "Clay Collector",
+  "trait-diamondintherough": "Diamond in the Rough",
+  "trait-shapeshifter": "Shapeshifter",
+  "trait-moonsick": "Moon Sick",
+  "trait-ashtoash": "Ashes to Ashes",
+
+  "charattribute-clayDropRate": "More clay dug up",
+  "charattribute-panningDropRate": "Chance for additional loot when panning",
+  "charattribute-burnsInSun": "You burn in sunlight"
 }
