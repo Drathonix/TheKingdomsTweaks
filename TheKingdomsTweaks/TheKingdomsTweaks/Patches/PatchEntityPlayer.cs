@@ -22,26 +22,36 @@ public class PatchEntityPlayer
 {
     internal static void Postfix(EntityPlayer __instance, float dt)
     {
-        if (__instance.Api.Side.IsServer() && __instance.Stats.Enabled("burnsInSun"))
+        if (__instance.Api.Side.IsServer())
         {
-
-            // A trait or attribute that checks for day or night, presence of a roof, and light level, --- ashtoash 
-            // and if day, unsheltered, and bright, sets the player on fire until conditions change back.
-            
-            int level = __instance.World.BlockAccessor.GetLightLevel(__instance.Pos.AsBlockPos, EnumLightLevelType.Sunbrightness);
-            if(level > 19)
+            float sunBrightnessBurnPoint = __instance.Stats.GetBlended("tkt:burnsInSunBrightness")-1;
+            if (sunBrightnessBurnPoint > 0)
             {
-                int timeInSun = __instance.WatchedAttributes.GetAsInt("tkttimeinsun");
-                timeInSun++;
-                if (timeInSun > 100 && !__instance.IsOnFire)
+                if(sunBrightnessBurnPoint <= __instance.World.BlockAccessor.GetLightLevel(__instance.Pos.AsBlockPos, EnumLightLevelType.Sunbrightness))
                 {
-                    __instance.Ignite();
+                    float sunLightBurnPoint = __instance.Stats.GetBlended("tkt:burnsInSunLight")-1;
+                    if (sunLightBurnPoint > 0)
+                    {
+                        if(sunLightBurnPoint <= __instance.World.BlockAccessor.GetLightLevel(__instance.Pos.AsBlockPos, EnumLightLevelType.OnlySunLight))
+                        {
+                            int timeInSun = __instance.WatchedAttributes.GetAsInt("tkttimeinsun");
+                            timeInSun++;
+                            if (timeInSun > 100 && !__instance.IsOnFire)
+                            {
+                                __instance.Ignite();
+                            }
+                            __instance.WatchedAttributes.SetInt("tkttimeinsun", timeInSun);
+                        }
+                        else
+                        {
+                            __instance.WatchedAttributes.SetInt("tkttimeinsun", 0);
+                        }
+                    }
                 }
-                __instance.WatchedAttributes.SetInt("tkttimeinsun", timeInSun);
-            }
-            else
-            {
-                __instance.WatchedAttributes.SetInt("tkttimeinsun", 0);
+                else
+                {
+                    __instance.WatchedAttributes.SetInt("tkttimeinsun", 0);
+                }
             }
         }
 

@@ -1,16 +1,6 @@
-﻿using HarmonyLib;
-using Newtonsoft.Json;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
 using TheKingdomsTweaks.API;
-using TheKingdomsTweaks.Block;
 using TheKingdomsTweaks.Network;
-using Vintagestory;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -31,7 +21,7 @@ public class StancesModSystem: ModSystem
 
     private Dictionary<string,Stance> ClientStances = [];
     public Stance DefaultStance;
-    /*public override void AssetsFinalize(ICoreAPI api)
+    public override void AssetsFinalize(ICoreAPI api)
     {
         foreach (var item in Gather(api))
         {
@@ -106,7 +96,7 @@ public class StancesModSystem: ModSystem
     public Stance GetStance(string code)
     {
         return StancesByCode.Get(code,DefaultStance);
-    }*/
+    }
 
     public Stance GetActiveStance(Entity entity)
     {

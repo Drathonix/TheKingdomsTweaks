@@ -8,6 +8,6 @@ namespace TheKingdomsTweaks.Network;
 [ProtoContract]
 public class PacketUpdateClientStances
 {
-    [ProtoMember(0)]
+    [ProtoMember(1)]
     public required string[] Codes;
 }

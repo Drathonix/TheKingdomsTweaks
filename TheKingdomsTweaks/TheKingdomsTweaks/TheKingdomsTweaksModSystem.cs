@@ -2,14 +2,13 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using System.Threading.Channels;
-using TheKingdomsTweaks.Block;
-using TheKingdomsTweaks.Network;
 using TheKingdomsTweaks.Stances;
+using TraitsAndClassesLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
+using Vintagestory.Common;
 
 namespace TheKingdomsTweaks
 {
@@ -26,7 +25,6 @@ namespace TheKingdomsTweaks
         {
             _harmony = new Harmony(HarmonyId);
             _harmony.PatchAll(Assembly.GetExecutingAssembly());
-            api.RegisterBlockClass("TKTClay", typeof(BlockClay));
             stances = api.ModLoader.GetModSystem<StancesModSystem>();
         }
 

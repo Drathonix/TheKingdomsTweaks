@@ -1,0 +1,11 @@
+[
+  {
+    "enabled": true,
+    "file": "game:blocktypes/plant/leaves/narrow.json",
+    "op": "addmerge",
+    "path": "/drops/0",
+    "value": {
+      "dropModByStat": "tkt:seedDropRate"
+    }
+  }
+]

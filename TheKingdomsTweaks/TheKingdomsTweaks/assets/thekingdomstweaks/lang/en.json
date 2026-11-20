@@ -4,8 +4,12 @@
   "trait-shapeshifter": "Shapeshifter",
   "trait-moonsick": "Moon Sick",
   "trait-ashtoash": "Ashes to Ashes",
+  "trait-treelover": "Dendrophile",
 
-  "charattribute-clayDropRate": "More clay dug up",
-  "charattribute-panningDropRate": "Chance for additional loot when panning",
-  "charattribute-burnsInSun": "You burn in sunlight"
+  "charattribute-tkt:clayDropRate": "More clay dug up",
+  "charattribute-tkt:panningDropRate": "Chance for additional loot when panning",
+  "charattribute-tkt:burnsInSunlight": "You burn in sunlight",
+  "charattribute-tkt:burnsInSunbrightness": "You burn in sunlight (during the day)",
+  "charattribute-tkt:seedDropRate": "You get more seeds from breaking leaves"
+
 }

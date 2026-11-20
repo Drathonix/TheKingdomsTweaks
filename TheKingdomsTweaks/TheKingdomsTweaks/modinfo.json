@@ -6,9 +6,9 @@
     "authors": [
         "Drathon"
     ],
-    "description": "Hawk Tuah!",
+    "description": "Various features for the kingdoms server!",
     "version": "1.0.0",
     "dependencies": {
-        "game": "1.21.0"
+        "game": "1.22.7"
     }
 }
