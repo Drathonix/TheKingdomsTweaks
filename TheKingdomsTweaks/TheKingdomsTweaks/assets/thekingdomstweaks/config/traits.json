@@ -27,14 +27,5 @@
     "attributes": {
       "tkt:seedDropRate": 2
     }
-  },
-  {
-    "code": "quadswapper",
-    "type": "positive",
-    "attributes": {
-      "canSwapStance":  1,
-      "stance_default":  1,
-      "stance_quadruped": 1
-    }
   }
 ]

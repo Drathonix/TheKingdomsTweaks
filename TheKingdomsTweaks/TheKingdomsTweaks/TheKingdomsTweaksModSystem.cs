@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-using TheKingdomsTweaks.Stances;
 using TraitsAndClassesLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -17,7 +16,6 @@ namespace TheKingdomsTweaks
         private const string HarmonyId = "thekingdomstweaks";
         private Harmony _harmony;
 
-        public StancesModSystem stances;
 
         // Called on server and client
         // Useful for registering block/entity classes on both sides
@@ -25,7 +23,6 @@ namespace TheKingdomsTweaks
         {
             _harmony = new Harmony(HarmonyId);
             _harmony.PatchAll(Assembly.GetExecutingAssembly());
-            stances = api.ModLoader.GetModSystem<StancesModSystem>();
         }
 
         public override void StartServerSide(ICoreServerAPI api)
