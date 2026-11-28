@@ -7,7 +7,7 @@
         "Drathon"
     ],
     "description": "Various features for the kingdoms server!",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "dependencies": {
         "game": "1.22.7"
     }

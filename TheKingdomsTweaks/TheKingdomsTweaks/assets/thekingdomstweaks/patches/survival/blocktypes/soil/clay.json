@@ -3,9 +3,7 @@
     "enabled": true,
     "file": "game:blocktypes/soil/clay.json",
     "op": "addmerge",
-    "path": "/drops/0",
-    "value": {
-      "dropModByStat": "tkt:clayDropRate"
-    }
+    "path": "/drops/0/dropModByStat",
+    "value": "tkt:clayDropRate"
   }
 ]
